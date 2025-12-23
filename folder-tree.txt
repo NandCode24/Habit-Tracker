@@ -1,0 +1,176 @@
+└── 📁 habit_tracker
+    ├── 📁 .next
+    │   ├── 📁 dev
+    │   │   ├── 📁 cache
+    │   │   │   ├── 📄 .rscinfo
+    │   │   │   ├── 📄 next-devtools-config.json
+    │   │   │   └── 📁 turbopack
+    │   │   │       └── 📁 v16.1.0-canary.19-84-g3aa53984e
+    │   │   │           ├── 📄 00000001.sst
+    │   │   │           ├── 📄 00000002.sst
+    │   │   │           ├── 📄 00000003.sst
+    │   │   │           ├── 📄 00000004.sst
+    │   │   │           ├── 📄 00000005.sst
+    │   │   │           ├── 📄 00000006.sst
+    │   │   │           ├── 📄 00000007.sst
+    │   │   │           ├── 📄 00000008.sst
+    │   │   │           ├── 📄 00000009.meta
+    │   │   │           ├── 📄 00000010.meta
+    │   │   │           ├── 📄 00000011.meta
+    │   │   │           ├── 📄 00000012.meta
+    │   │   │           ├── 📄 00000013.meta
+    │   │   │           ├── 📄 00000014.sst
+    │   │   │           ├── 📄 00000015.sst
+    │   │   │           ├── 📄 00000016.sst
+    │   │   │           ├── 📄 00000017.sst
+    │   │   │           ├── 📄 00000018.sst
+    │   │   │           ├── 📄 00000019.meta
+    │   │   │           ├── 📄 00000020.meta
+    │   │   │           ├── 📄 00000021.meta
+    │   │   │           ├── 📄 00000022.meta
+    │   │   │           ├── 📄 00000023.meta
+    │   │   │           ├── 📄 00000024.sst
+    │   │   │           ├── 📄 00000025.sst
+    │   │   │           ├── 📄 00000026.sst
+    │   │   │           ├── 📄 00000027.sst
+    │   │   │           ├── 📄 00000028.sst
+    │   │   │           ├── 📄 00000029.meta
+    │   │   │           ├── 📄 00000030.meta
+    │   │   │           ├── 📄 00000031.meta
+    │   │   │           ├── 📄 00000032.meta
+    │   │   │           ├── 📄 00000033.meta
+    │   │   │           ├── 📄 CURRENT
+    │   │   │           └── 📄 LOG
+    │   │   ├── 📄 fallback-build-manifest.json
+    │   │   ├── 📄 lock
+    │   │   ├── 📁 logs
+    │   │   │   └── 📄 next-development.log
+    │   │   ├── 📄 package.json
+    │   │   ├── 📄 prerender-manifest.json
+    │   │   ├── 📄 routes-manifest.json
+    │   │   ├── 📁 server
+    │   │   │   ├── 📁 app
+    │   │   │   │   ├── 📁 page
+    │   │   │   │   │   ├── 📄 app-paths-manifest.json
+    │   │   │   │   │   ├── 📄 next-font-manifest.json
+    │   │   │   │   │   ├── 📄 react-loadable-manifest.json
+    │   │   │   │   │   └── 📄 server-reference-manifest.json
+    │   │   │   │   ├── 📄 page.js
+    │   │   │   │   ├── 📄 page.js.map
+    │   │   │   │   └── 📄 page_client-reference-manifest.js
+    │   │   │   ├── 📄 app-paths-manifest.json
+    │   │   │   ├── 📁 chunks
+    │   │   │   │   └── 📁 ssr
+    │   │   │   │       ├── 📄 [externals]__e8a2741f._.js
+    │   │   │   │       ├── 📄 [externals]__e8a2741f._.js.map
+    │   │   │   │       ├── 📄 [externals]_next_dist_c80f7c8f._.js
+    │   │   │   │       ├── 📄 [externals]_next_dist_c80f7c8f._.js.map
+    │   │   │   │       ├── 📄 [externals]_next_dist_compiled_next-server_app-page-turbo_runtime_dev_062c5159.js
+    │   │   │   │       ├── 📄 [externals]_next_dist_compiled_next-server_app-page-turbo_runtime_dev_062c5159.js.map
+    │   │   │   │       ├── 📄 [root-of-the-server]__1222724e._.js
+    │   │   │   │       ├── 📄 [root-of-the-server]__1222724e._.js.map
+    │   │   │   │       ├── 📄 [root-of-the-server]__1d5db21e._.js
+    │   │   │   │       ├── 📄 [root-of-the-server]__1d5db21e._.js.map
+    │   │   │   │       ├── 📄 [root-of-the-server]__31c4daa8._.js
+    │   │   │   │       ├── 📄 [root-of-the-server]__31c4daa8._.js.map
+    │   │   │   │       ├── 📄 [root-of-the-server]__a8ab9a0d._.js
+    │   │   │   │       ├── 📄 [root-of-the-server]__a8ab9a0d._.js.map
+    │   │   │   │       ├── 📄 [turbopack]_runtime.js
+    │   │   │   │       ├── 📄 [turbopack]_runtime.js.map
+    │   │   │   │       ├── 📄 _next-internal_server_app_page_actions_39d4fc33.js
+    │   │   │   │       ├── 📄 _next-internal_server_app_page_actions_39d4fc33.js.map
+    │   │   │   │       ├── 📄 app_b9b1292a._.js
+    │   │   │   │       └── 📄 app_b9b1292a._.js.map
+    │   │   │   ├── 📄 interception-route-rewrite-manifest.js
+    │   │   │   ├── 📄 middleware-build-manifest.js
+    │   │   │   ├── 📄 middleware-manifest.json
+    │   │   │   ├── 📄 next-font-manifest.js
+    │   │   │   ├── 📄 next-font-manifest.json
+    │   │   │   ├── 📄 pages-manifest.json
+    │   │   │   ├── 📄 server-reference-manifest.js
+    │   │   │   └── 📄 server-reference-manifest.json
+    │   │   ├── 📁 static
+    │   │   │   ├── 📁 chunks
+    │   │   │   │   ├── 📄 [next]_internal_font_google_geist_a71539c9_module_css_bad6b30c._.single.css
+    │   │   │   │   ├── 📄 [next]_internal_font_google_geist_a71539c9_module_css_bad6b30c._.single.css.map
+    │   │   │   │   ├── 📄 [next]_internal_font_google_geist_mono_8d43a2aa_module_css_bad6b30c._.single.css
+    │   │   │   │   ├── 📄 [next]_internal_font_google_geist_mono_8d43a2aa_module_css_bad6b30c._.single.css.map
+    │   │   │   │   ├── 📄 [root-of-the-server]__28bc9c2a._.css
+    │   │   │   │   ├── 📄 [root-of-the-server]__28bc9c2a._.css.map
+    │   │   │   │   ├── 📄 [turbopack]_browser_dev_hmr-client_hmr-client_ts_956a0d3a._.js
+    │   │   │   │   ├── 📄 [turbopack]_browser_dev_hmr-client_hmr-client_ts_956a0d3a._.js.map
+    │   │   │   │   ├── 📄 [turbopack]_browser_dev_hmr-client_hmr-client_ts_c7192189._.js
+    │   │   │   │   ├── 📄 [turbopack]_browser_dev_hmr-client_hmr-client_ts_c8c997ce._.js
+    │   │   │   │   ├── 📄 [turbopack]_browser_dev_hmr-client_hmr-client_ts_c8c997ce._.js.map
+    │   │   │   │   ├── 📄 _23a915ee._.js.map
+    │   │   │   │   ├── 📄 _a0ff3932._.js
+    │   │   │   │   ├── 📄 app_favicon_ico_mjs_745fddaf._.js
+    │   │   │   │   ├── 📄 app_globals_css_bad6b30c._.single.css
+    │   │   │   │   ├── 📄 app_globals_css_bad6b30c._.single.css.map
+    │   │   │   │   ├── 📄 app_layout_tsx_1cf6b850._.js
+    │   │   │   │   ├── 📄 app_page_tsx_a8c03fea._.js
+    │   │   │   │   └── 📄 turbopack-_23a915ee._.js
+    │   │   │   ├── 📁 development
+    │   │   │   │   ├── 📄 _buildManifest.js
+    │   │   │   │   ├── 📄 _clientMiddlewareManifest.json
+    │   │   │   │   └── 📄 _ssgManifest.js
+    │   │   │   └── 📁 media
+    │   │   │       ├── 📄 4fa387ec64143e14-s.c1fdd6c2.woff2
+    │   │   │       ├── 📄 7178b3e590c64307-s.b97b3418.woff2
+    │   │   │       ├── 📄 797e433ab948586e-s.p.dbea232f.woff2
+    │   │   │       ├── 📄 8a480f0b521d4e75-s.8e0177b5.woff2
+    │   │   │       ├── 📄 bbc41e54d2fcbd21-s.799d8ef8.woff2
+    │   │   │       ├── 📄 caa3a2e1cccd8315-s.p.853070df.woff2
+    │   │   │       └── 📄 favicon.0b3bf435.ico
+    │   │   ├── 📄 trace
+    │   │   └── 📁 types
+    │   │       ├── 📄 cache-life.d.ts
+    │   │       ├── 📄 routes.d.ts
+    │   │       └── 📄 validator.ts
+    │   └── 📁 types
+    │       ├── 📄 cache-life.d.ts
+    │       ├── 📄 routes.d.ts
+    │       └── 📄 validator.ts
+    ├── 📁 Designs
+    │   ├── 📄 HT-1.png
+    │   ├── 📄 HT-2.png
+    │   ├── 📄 HT-3.png
+    │   └── 📄 HT-4.png
+    ├── 📄 README.md
+    ├── 📁 app
+    │   ├── 📄 favicon.ico
+    │   ├── 📄 globals.css
+    │   ├── 📄 layout.tsx
+    │   ├── 📁 motivation
+    │   │   └── 📄 page.tsx
+    │   ├── 📄 page.tsx
+    │   └── 📁 stats
+    │       └── 📄 page.tsx
+    ├── 📁 components
+    │   ├── 📄 AddHabitModal.tsx
+    │   ├── 📄 HabitList.tsx
+    │   ├── 📄 HabitRow.tsx
+    │   ├── 📄 Navbar.tsx
+    │   ├── 📄 ProgressRing.tsx
+    │   ├── 📄 StatsCards.tsx
+    │   └── 📄 TopBar.tsx
+    ├── 📄 eslint.config.mjs
+    ├── 📁 hooks
+    │   └── 📄 useHabits.ts
+    ├── 📁 lib
+    │   └── 📄 storage.ts
+    ├── 📄 next.config.ts
+    ├── 📄 package-lock.json
+    ├── 📄 package.json
+    ├── 📄 postcss.config.mjs
+    ├── 📁 public
+    │   ├── 📄 file.svg
+    │   ├── 📄 globe.svg
+    │   ├── 📄 next.svg
+    │   ├── 📄 vercel.svg
+    │   └── 📄 window.svg
+    ├── 📄 tsconfig.json
+    ├── 📁 types
+    │   └── 📄 habit.ts
+    └── 📁 utils
+        └── 📄 date.ts
