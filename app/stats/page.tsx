@@ -77,7 +77,7 @@ export default function StatsPage() {
               🔥 Current Streak
             </p>
 
-            <p className="text-5xl font-bold">
+            <p className="text-5xl font-bold text-gray-600">
               {currentStreak}
               <span className="text-lg text-gray-600 ml-2">days</span>
             </p>
@@ -88,13 +88,15 @@ export default function StatsPage() {
 
             <div className="mt-6 flex gap-12 text-sm">
               <div>
-                <p className="text-gray-600">Best Streak</p>
-                <p className="font-semibold">{bestStreakAllTime} Days</p>
+                <p className="text-gray-500">Best Streak</p>
+                <p className="font-semibold text-gray-600">
+                  {bestStreakAllTime} Days
+                </p>
               </div>
 
               <div>
-                <p className="text-gray-600">Active Habits</p>
-                <p className="font-semibold">
+                <p className="text-gray-500">Active Habits</p>
+                <p className="font-semibold text-gray-600">
                   {habits.filter((h) => h.streak > 0).length}
                 </p>
               </div>

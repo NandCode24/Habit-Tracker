@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { Plus } from "lucide-react";
 
 import StatsCards from "@/components/StatsCards";
 import HabitList from "@/components/HabitList";
@@ -91,6 +92,24 @@ export default function HomePage() {
               No habits yet. Start with one small commitment.
             </p>
           )}
+
+          {/* ➕ Add Habit Button (below list, all devices) */}
+          <div className="mt-6 flex justify-center">
+            <button
+              onClick={() => setOpen(true)}
+              className="
+                flex items-center gap-2
+                px-6 py-3 rounded-xl
+                border border-neutral-800
+                bg-neutral-900
+                text-sm text-neutral-200
+                hover:bg-neutral-800 transition
+              "
+            >
+              <Plus size={18} />
+              Add Habit
+            </button>
+          </div>
         </section>
 
         {/* Footer */}
@@ -101,6 +120,7 @@ export default function HomePage() {
         </div>
       </div>
 
+      {/* Modal */}
       <AddHabitModal
         isOpen={open}
         onClose={() => setOpen(false)}
