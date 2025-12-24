@@ -1,4 +1,4 @@
-export type FrequencyType = "weekly" | "monthly";
+export type FrequencyType = "daily" | "weekly" | "monthly";
 
 export interface Habit {
   id: string;
@@ -7,14 +7,13 @@ export interface Habit {
   emoji: string;
 
   // 🔁 Frequency system
-  frequencyType: FrequencyType; // weekly | monthly
-  frequencyTarget: number; // times per period
+  frequencyType: FrequencyType;
+  frequencyTarget: number; // daily = always 1
 
   // 🔥 Streak system
   streak: number;
   completedToday: boolean;
-  lastCompletedDate?: string;
 
-  // 📅 History
+  // 📅 Completion history (source of truth)
   completedDates: string[];
 }

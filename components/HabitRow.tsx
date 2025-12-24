@@ -11,14 +11,42 @@ interface Props {
 export default function HabitRow({ habit, onToggle, onDelete }: Props) {
   const today = getToday();
 
-  const currentKey =
-    habit.frequencyType === "weekly" ? getWeekKey(today) : getMonthKey(today);
+  let label = "";
+  let currentCount = 0;
+  let target = habit.frequencyTarget;
 
-  const currentCount = habit.completedDates.filter((d) =>
-    habit.frequencyType === "weekly"
-      ? getWeekKey(d) === currentKey
-      : getMonthKey(d) === currentKey
-  ).length;
+  /* ======================
+     DAILY
+  ====================== */
+  if (habit.frequencyType === "daily") {
+    label = "Today";
+    currentCount = habit.completedToday ? 1 : 0;
+    target = 1;
+  }
+
+  /* ======================
+     WEEKLY
+  ====================== */
+  if (habit.frequencyType === "weekly") {
+    const weekKey = getWeekKey(today);
+    label = "This week";
+
+    currentCount = habit.completedDates.filter(
+      (d) => getWeekKey(d) === weekKey
+    ).length;
+  }
+
+  /* ======================
+     MONTHLY
+  ====================== */
+  if (habit.frequencyType === "monthly") {
+    const monthKey = getMonthKey(today);
+    label = "This month";
+
+    currentCount = habit.completedDates.filter(
+      (d) => getMonthKey(d) === monthKey
+    ).length;
+  }
 
   return (
     <div className="group flex items-center justify-between rounded-xl bg-neutral-900 px-5 py-4 border border-neutral-800">
@@ -28,8 +56,9 @@ export default function HabitRow({ habit, onToggle, onDelete }: Props) {
 
         <div>
           <p className="font-medium text-white">{habit.title}</p>
+
           <p className="text-sm text-neutral-400">
-            This {habit.frequencyType}: {currentCount} / {habit.frequencyTarget}
+            {label}: {currentCount} / {target}
           </p>
         </div>
       </div>
@@ -44,6 +73,7 @@ export default function HabitRow({ habit, onToggle, onDelete }: Props) {
           onClick={() => onToggle(habit.id)}
           className={`
             h-6 w-6 rounded-md border flex items-center justify-center
+            transition
             ${
               habit.completedToday
                 ? "bg-green-500 border-green-500 text-black"

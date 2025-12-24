@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { Habit } from "@/types/habit";
+import { Habit, FrequencyType } from "@/types/habit";
 import { loadHabits, saveHabits } from "@/lib/storage";
 import { getToday, getWeekKey, getMonthKey } from "@/utils/date";
 import { nanoid } from "nanoid";
@@ -19,8 +19,9 @@ export function useHabits() {
       ...habit,
       completedToday: habit.completedDates?.includes(today) ?? false,
       completedDates: habit.completedDates ?? [],
-      frequencyType: habit.frequencyType ?? "weekly",
-      frequencyTarget: habit.frequencyTarget ?? 1,
+      frequencyType: habit.frequencyType ?? "daily",
+      frequencyTarget:
+        habit.frequencyType === "daily" ? 1 : habit.frequencyTarget ?? 1,
     }));
 
     setHabits(hydrated);
@@ -34,7 +35,7 @@ export function useHabits() {
     saveHabits(habits);
   }, [habits]);
 
-  // 🔥 Toggle habit (frequency-aware + HARD CAP)
+  // 🔥 Toggle habit
   function toggleHabit(id: string) {
     const today = getToday();
 
@@ -43,25 +44,52 @@ export function useHabits() {
         if (h.id !== id) return h;
         if (h.completedToday) return h;
 
-        // 🔒 CRITICAL: block over-completion
-        const currentPeriodKey =
+        /* =======================
+           DAILY HABIT LOGIC
+        ======================= */
+        if (h.frequencyType === "daily") {
+          const updatedDates = [...h.completedDates, today];
+
+          let streak = 1;
+          const sorted = [...updatedDates].sort();
+
+          for (let i = 1; i < sorted.length; i++) {
+            const prevDate = new Date(sorted[i - 1]);
+            const currDate = new Date(sorted[i]);
+            const diff =
+              (currDate.getTime() - prevDate.getTime()) / (1000 * 60 * 60 * 24);
+
+            if (diff === 1) streak++;
+            else streak = 1;
+          }
+
+          return {
+            ...h,
+            completedToday: true,
+            completedDates: updatedDates,
+            streak,
+          };
+        }
+
+        /* =======================
+           WEEKLY / MONTHLY LOGIC
+        ======================= */
+        const periodKey =
           h.frequencyType === "weekly" ? getWeekKey(today) : getMonthKey(today);
 
         const currentPeriodCount = h.completedDates.filter((d) =>
           h.frequencyType === "weekly"
-            ? getWeekKey(d) === currentPeriodKey
-            : getMonthKey(d) === currentPeriodKey
+            ? getWeekKey(d) === periodKey
+            : getMonthKey(d) === periodKey
         ).length;
 
-        // 🛑 Stop if target already met
+        // 🛑 Hard cap
         if (currentPeriodCount >= h.frequencyTarget) {
           return h;
         }
 
-        // ✅ Safe to add completion
         const updatedDates = [...h.completedDates, today];
 
-        // 🔢 Recalculate streaks
         const periodMap = new Map<string, number>();
 
         for (const date of updatedDates) {
@@ -106,7 +134,7 @@ export function useHabits() {
     title: string;
     subtitle?: string;
     emoji: string;
-    frequencyType: "weekly" | "monthly";
+    frequencyType: FrequencyType;
     frequencyTarget: number;
   }) {
     const newHabit: Habit = {
@@ -116,7 +144,8 @@ export function useHabits() {
       emoji: data.emoji,
 
       frequencyType: data.frequencyType,
-      frequencyTarget: data.frequencyTarget,
+      frequencyTarget:
+        data.frequencyType === "daily" ? 1 : data.frequencyTarget,
 
       streak: 0,
       completedToday: false,
@@ -136,8 +165,8 @@ export function useHabits() {
     habits,
     addHabit,
     toggleHabit,
-    completedCount,
     deleteHabit,
+    completedCount,
     totalCount,
     progress,
   };

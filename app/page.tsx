@@ -48,16 +48,7 @@ export default function HomePage() {
             Stats
           </Link>
 
-          <Link
-            href="/motivation"
-            className="
-              px-4 py-2 rounded-lg border border-neutral-800
-              bg-neutral-900 text-sm text-neutral-200
-              hover:bg-neutral-800 transition
-            "
-          >
-            Motivation
-          </Link>
+    
         </div>
 
         {/* Date */}

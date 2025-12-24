@@ -49,8 +49,8 @@ export default function ProgressRing({ progress, completed, total }: Props) {
 
       {/* Center text */}
       <div className="absolute text-center">
-        <p className="text-3xl font-semibold text-black">{progress}%</p>
-        <p className="mt-1 text-sm text-black">
+        <p className="text-3xl font-semibold text-white">{progress}%</p>
+        <p className="mt-1 text-sm text-white">
           {completed} / {total} done
         </p>
       </div>
