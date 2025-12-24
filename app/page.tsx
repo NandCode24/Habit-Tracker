@@ -19,6 +19,7 @@ export default function HomePage() {
     addHabit,
     toggleHabit,
     completedCount,
+    deleteHabit,
     totalCount,
     progress,
   } = useHabits();
@@ -85,7 +86,11 @@ export default function HomePage() {
 
         {/* Habits */}
         <section className="mt-10">
-          <HabitList habits={habits} onToggle={toggleHabit} />
+          <HabitList
+            habits={habits}
+            onToggle={toggleHabit}
+            onDelete={deleteHabit}
+          />
 
           {habits.length === 0 && (
             <p className="mt-10 text-sm text-neutral-500 text-center">

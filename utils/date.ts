@@ -39,3 +39,22 @@ export function getLast7Days(): string[] {
 
   return days;
 }
+
+/* ───────────────────────────── */
+/* 🔁 FREQUENCY HELPERS           */
+/* ───────────────────────────── */
+
+export function getWeekKey(date: string): string {
+  const d = new Date(date);
+  const year = d.getFullYear();
+  const start = new Date(year, 0, 1);
+  const diff = (d.getTime() - start.getTime()) / 86400000 + start.getDay() + 1;
+  const week = Math.ceil(diff / 7);
+
+  return `${year}-W${week}`;
+}
+
+export function getMonthKey(date: string): string {
+  const d = new Date(date);
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}`;
+}
